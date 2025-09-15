@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 function Product({ fetchProducts, productReducer, addToCart }) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [failure, setFailure] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null); // New state
 
@@ -14,7 +13,6 @@ function Product({ fetchProducts, productReducer, addToCart }) {
   useEffect(() => {
     if (productReducer.status === "reject") {
       setIsLoading(false);
-      setFailure(true);
       setShowAlert(false);
     } else if (productReducer.status === "success") {
       setProducts(productReducer.products);
