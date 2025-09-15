@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CartProductCard from "../../../componets/CardProducts";
 
 function Cart({ cartReducer, removeFromCart, increaseQuantity, decreaseQuantity }) {
